@@ -87,6 +87,24 @@ Obtener un conteo exacto de **todas las aperturas/variantes (hojas)** del árbol
 
 ---
 
+## Variantes de Ajedrez Soportadas por Lichess
+
+Según la documentación del repositorio `lila-openingexplorer`, las variantes disponibles son:
+
+| Variante | Descripción |
+|----------|-------------|
+| **standard** (chess) | Ajedrez estándar 50x50 |
+| **antichess** | Ajedrez inverso (capturar piezas negras) |
+| **atomic** | Variantes con piezas explosivas |
+| **chess960** | Fischer Random Chess |
+| **horde** | Variante con peones en la primera fila |
+| **racingKings** | Variante con reyes en la primera fila |
+| **threeCheck** | Ajedrez con tres jaques |
+| **crazyhouse** | Crazyhouse (capturar piezas para añadir al tablero) |
+| **kingOfTheHill** | King of the Hill |
+
+---
+
 ## Desafíos Identificados
 
 ### 1. Transposiciones y Duplicados
@@ -95,18 +113,19 @@ Obtener un conteo exacto de **todas las aperturas/variantes (hojas)** del árbol
 
 ### 2. Variantes No Estándar
 - Aperturas como Chess960, Antichess, Atomic, Crazyhouse, Horde, King of the Hill, Racing Kings
-- Estas no están en el repositorio chess-openings estándar
+- Estas no están en el repositorio chess-openings estándar (solo volumen ECO A y B)
 
 ### 3. API Limitaciones
 - La API de Lichess requiere parámetros específicos para obtener aperturas
 - No hay endpoint directo para "todas las aperturas"
+- El endpoint `player` devuelve datos basados en movimientos, no lista completa de aperturas
 
 ---
 
 ## Próximos Pasos
 
 1. **Obtener conteo completo** de todos los archivos TSV (a.tsv, b.tsv, c.tsv, d.tsv, e.tsv)
-2. **Validar con API** de Lichess Opening Explorer
+2. **Validar con API** de Lichess Opening Explorer para diferentes variantes
 3. **Incluir variantes no estándar** (Chess960, Antichess, etc.)
 4. **Generar reporte final** con conteo exacto de todas las hojas
 
